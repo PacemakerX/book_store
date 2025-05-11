@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator,MaxValueValidator
 
 # Create your models here.
 
@@ -6,4 +7,11 @@ from django.db import models
 
 class Book(models.Model):
     title = models.CharField(max_length=50)
-    rating = models.IntegerField()
+    rating = models.IntegerField(
+        validators=[MinValueValidator(1),MaxValueValidator(10)]
+    )
+    author= models.CharField(max_length=100)
+    is_bestselling=models.BooleanField()
+        
+    def __str__(self):
+        return f"Name: {self.title} Raiting:{self.rating} Is_BestSelling:{'YES' if self.is_bestselling else 'NO'}"
