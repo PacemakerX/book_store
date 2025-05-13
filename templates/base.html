@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block page_title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block page_title %}Book Store{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% block page_styles %}{% endblock %}
-</head>
-<body>
-     {% comment %} <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-            </ul>
-        </nav>
-    </header>  {% endcomment %}
-    <main>
-        {% block page_content %}
-        {% endblock %}
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-bar">
+        <ul class="nav-list">
+          {% comment %}
+          <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+          <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+          <li><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+          {% endcomment %}
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <section class="hero">
+        <h1>Welcome to the Book Store</h1>
+        <p>Your one-stop destination for all your favorite books.</p>
+        {% comment %}
+        <a href="{% url 'books' %}" class="btn-primary">Browse Books</a> 
+        {% endcomment %}
+      </section>
+      {% block page_content %} {% endblock %}
     </main>
-    <footer>
-        <p>&copy; 2023 Book Store</p>
+    <footer class="footer">
+      <p>&copy; 2025 Book Store. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
