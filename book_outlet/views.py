@@ -8,10 +8,9 @@ def all_book_details(request):
         "books": books
     })
     
-def book_details(request, book_title):
-    book_title = " ".join(word.capitalize() for word in book_title.split("-"))
+def book_details(request, book_slug):
     try:
-        book = Book.objects.get(title=book_title)
+        book = Book.objects.get(slug=book_slug)
     except Book.DoesNotExist:
         book = None
     return render(request, './book_outlet/book_detail.html', {
