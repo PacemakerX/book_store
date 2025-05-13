@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block page_styles%} 
+<link rel='stylesheet' href='{% static 'book_outlet/book_detail.css' %}'>
+{% endblock%}
+{% block page_title %} Book Details{% endblock %} 
+{%block page_content %}
+<div class="book-detail">
+  <h1>{{ book.title }}</h1>
+  <p><strong>Author:</strong> {{ book.author }}</p>
+  <p><strong>Rating:</strong> {{ book.rating }}</p>
+  <p><strong>Is it Best Selling :</strong> {{ book.is_bestselling }}</p>
+  <a href="{% url 'all_book_details' %}" class="btn-back">Back to Home</a>
+</div>
+{% endblock %}
