@@ -1,41 +1,67 @@
-/* General styles for the book cards */
+/* Enhanced styles for the book cards */
+
 .book-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 30px;
+  background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Standardize card size and remove purple underlines */
+
 .book-card {
-  background-color: #ffffff;
+  background: #ffffff;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 300px; /* Standardized width */
+  height: 250px; /* Standardized height */
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden; /* Ensure content does not overflow */
 }
 
 .book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .book-card h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .book-card p {
-  font-size: 1rem;
-  color: #555;
-  margin: 5px 0;
+  font-size: 1.1rem;
+  color: #34495e;
+  margin: 8px 0;
+  line-height: 1.6;
 }
 
 .book-card strong {
-  color: #000;
+  color: #2c3e50;
+}
+
+/* Remove blue underlines from links */
+.book-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove purple underlines from visited links */
+.book-card a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.book-card a:hover {
+  text-decoration: none;
+  color: inherit;
 }
